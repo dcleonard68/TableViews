@@ -15,13 +15,13 @@ class WeekListViewController: UIViewController,UITableViewDelegate,UITableViewDa
   let weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
   
   
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    // Do any additional setup after loading the view.
+  }
+  
   // MARK: - TableView DataSource Methods
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,18 +48,43 @@ class WeekListViewController: UIViewController,UITableViewDelegate,UITableViewDa
   
   
   
+  // MARK: - Navigation
   
-  
-  
-  
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+  // In a storyboard-based application, you will often want to do a little preparation before navigation
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    
+    // How are we getting there?
+    if segue.identifier == "toDetailSegue" {
+      // Where are we going? / What are we taking / and where is it?
+      let detailVC = segue.destinationViewController as? DayViewController
+      if let indexPath = myTableView.indexPathForSelectedRow{
+        let day = weekdays[indexPath.row]
+        // Did I bring it / Did i arrive?
+        detailVC?.day = day
+        
+        
+      }
+      
     }
-    */
-
+    
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
+  }
+  
+  
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
