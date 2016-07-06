@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Week List View Controller-->
         <scene sceneID="Pmh-hv-0Rb">
             <objects>
-                <viewController id="yFF-HD-bOl" sceneMemberID="viewController">
+                <viewController id="yFF-HD-bOl" customClass="WeekListViewController" customModule="TableViews2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aYd-Hk-48t"/>
                         <viewControllerLayoutGuide type="bottom" id="x9l-IU-E1R"/>
@@ -42,6 +42,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="yFF-HD-bOl" id="Jjy-HK-uk6"/>
+                                    <outlet property="delegate" destination="yFF-HD-bOl" id="MqR-D6-95o"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -54,15 +58,18 @@
                     </view>
                     <navigationItem key="navigationItem" id="wBV-qP-WSu"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="myTableView" destination="wJi-Yl-eU5" id="lob-Ip-erf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8RE-bd-KYC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="665" y="247"/>
         </scene>
-        <!--View Controller-->
+        <!--Day View Controller-->
         <scene sceneID="19h-xp-640">
             <objects>
-                <viewController id="5uk-fr-6oL" sceneMemberID="viewController">
+                <viewController id="5uk-fr-6oL" customClass="DayViewController" customModule="TableViews2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cVi-Mz-OvR"/>
                         <viewControllerLayoutGuide type="bottom" id="UQb-hP-SN7"/>
