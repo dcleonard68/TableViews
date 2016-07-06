@@ -30,8 +30,19 @@ class WeekListViewController: UIViewController,UITableViewDelegate,UITableViewDa
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("dayCell", forIndexPath: indexPath)
+    let day = weekdays[indexPath.row]
+    cell.textLabel?.text = day
+    
+    
     return cell
     
+  }
+  
+  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    //return 70
+    
+    // This configures the cell height
+    return (self.view.layer.frame.height - 64) / 7
   }
   
   
